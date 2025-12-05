@@ -154,4 +154,36 @@ export default {
 body {
   background-color: #f8f9fa;
 }
+
+/* Evita overflow por inputs en grids flex (permite que los inputs se encojan) */
+.row > [class*="col-"] .form-control {
+  min-width: 0;
+}
+
+/* Permite scroll horizontal en tablas cuando sea necesario */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Truncado controlado para columnas largas en pantallas pequeñas */
+.title-cell,
+.genres-cell {
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Card puede scroll si su contenido es demasiado ancho en xs */
+.card {
+  overflow: auto;
+}
+
+/* Mejora el wrapping de textos largos dentro de celdas si se necesita */
+.table td,
+.table th {
+  vertical-align: middle;
+  /* Por defecto truncamos en columnas específicas; si quieres permitir wrap, cambia a: white-space: normal; */
+  word-break: break-word;
+}
 </style>
